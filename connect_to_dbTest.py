@@ -14,38 +14,6 @@ conn = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};'
 
 cursor = conn.cursor()
 
-# Create a table if necessary
-# cursor.execute('''
-
-#                CREATE TABLE tablename
-#                (
-#                title nvarchar(MAX),
-#                date smalldatetime,
-#                link nvarchar(MAX),
-#                price decimal,
-#                publication_date smalldatetime,
-#                address nvarchar(MAX),
-#                closest_metro nvarchar(MAX),
-#                district nvarchar(MAX),
-#                metro_distance_km float,
-#                description nvarchar(MAX),
-#                parameters nvarchar(MAX),
-#                page int,
-#                latitude float,
-#                longitude float,
-#                area float,
-#                class nvarchar(MAX),
-#                views int,
-#                views_dynamics int,
-#                profile_name nvarchar(MAX),
-#                profile_type nvarchar(MAX),
-#                on_avito_since smalldatetime
-#                )
-
-#                ''')
-
-# conn.commit()
-
 # Insert df to existing table in bd
 for row in df.itertuples():
     cursor.execute('''
